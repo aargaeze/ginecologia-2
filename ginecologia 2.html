@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Médica Especializada</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        header {
+            background-color: #fce4ec;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            max-width: 200px;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .hero {
+            background-image: url('https://raw.githubusercontent.com/tu-usuario/tu-repo/main/portada.jpg'); /* Reemplaza con tu URL */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .accordion {
+            background-color: #f0f0f0;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            transition: 0.4s;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .accordion:hover {
+            background-color: #ddd;
+        }
+        .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        .active:after {
+            content: "\2212";
+        }
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, select, textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #e91e63;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .success-message {
+            color: green;
+            margin-top: 10px;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://raw.githubusercontent.com/tu-usuario/tu-repo/main/logo.png" alt="Logo de la Clínica">
+    </header>
+    <div class="hero">
+        <h1>Bienvenido a nuestra Clínica</h1>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h2>¿Quiénes Somos?</h2>
+            <p>Clínica enfocada en salud ginecológica, obstétrica y pediátrica. Brindamos atención con calidez, ética profesional y trato humano, especialmente a mujeres, infancias y familias.</p>
+            <h2>Misión</h2>
+            <p>Brindar atención médica especializada, accesible y con enfoque integral a mujeres, gestantes e infancias.</p>
+            <h2>Visión</h2>
+            <p>Ser un referente en salud femenina e infantil, por nuestra excelencia médica, cercanía y compromiso con la comunidad.</p>
+            <h2>Valores</h2>
+            <ul>
+                <li>Ética profesional</li>
+                <li>Empatía</li>
+                <li>Diversidad</li>
+                <li>Honestidad</li>
+                <li>Responsabilidad</li>
+                <li>Enfoque de género y niñez</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>Especialidades Médicas</h2>
+            <button class="accordion">‍⚕️ Ginecología</button>
+            <div class="panel">
+                <p>Salud reproductiva, planificación familiar, anticoncepción, estudios Papanicolaou, chequeos ginecológicos.</p>
+            </div>
+            <button class="accordion"> Obstetricia</button>
+            <div class="panel">
+                <p>Control prenatal, ultrasonidos, educación perinatal, atención en embarazo de bajo y alto riesgo.</p>
+            </div>
+            <button class="accordion"> Pediatría</button>
+            <div class="panel">
+                <p>Control del desarrollo infantil, vacunas, revisiones, prevención de enfermedades y orientación para madres/padres.</p>
+            </div>
+            <button class="accordion">🩺 Medicina General</button>
+            <div class="panel">
+                <p>Valoración inicial, seguimiento a condiciones generales de salud, chequeos básicos y canalización a especialidades.</p>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Agendar Cita</h2>
+            <form id="appointment-form" method="POST" action="https://script.google.com/macros/s/AKfycbx7S38KN08Ue4_UALhPs9z2nrbCEKClmikjU5SSQ8zau9A1ul7ZEu0C5FiqMV9c4oe63w/exec">
+                <input type="text" name="name" placeholder="Nombre completo" required>
+                <input type="tel" name="phone" placeholder="Teléfono" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <select name="gender" required>
+                    <option value="">Sexo</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                <select name="specialty" required>
+                    <option value="">Especialidad</option>
+                    <option value="Ginecología">Ginecología</option>
+                    <option value="Obstetricia">Obstetricia</option>
+                    <option value="Pediatría">Pediatría</option>
+                    <option value="Medicina General">Medicina General</option>
+                </select>
+                <input type="date" name="date" required>
+                <input type="time" name="time" required>
+                <textarea name="comments" placeholder="Comentarios adicionales"></textarea>
+                <button type="submit">Agendar Cita</button>
+                <div class="success-message" id="success-message">
+                    Gracias, tu cita ha sido agendada.<br>
+                    ⏳ Redirigiendo al inicio...<br>
+                     Te contactaremos pronto.
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+        document.getElementById('appointment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('success-message').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('success-message').style.display = 'none';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                document.getElementById('appointment-form').reset();
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
